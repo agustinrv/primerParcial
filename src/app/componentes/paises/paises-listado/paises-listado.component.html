@@ -1,0 +1,9 @@
+
+
+<app-tabla-paises  (paisSeleccionado)="SeleccionarPais($event)"></app-tabla-paises>
+
+<div class="container">
+    <div class="w-50">
+        <app-detalle-pais (desabilitarPais)="DesabilitarPais($event)" [pais]="paisSeleccionado"></app-detalle-pais>
+    </div>
+</div>

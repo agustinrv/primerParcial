@@ -1,0 +1,67 @@
+  
+ <body class="bg-light mt-4">
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>Alta Actores</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <app-tabla-paises (paisSeleccionado)="SeleccionarPais($event)"></app-tabla-paises>
+            
+        </div>
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Alta</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">Nombre</label>
+                <input type="text" class="form-control" id="firstName" [(ngModel)]="nuevoActor.nombre" [ngModelOptions]="{standalone: true}">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Apellido</label>
+                <input type="text" class="form-control" id="lastName" [(ngModel)]="nuevoActor.apellido" [ngModelOptions]="{standalone: true}">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Sexo</label>
+              
+              <input type="email" class="form-control" id="email" [(ngModel)]="nuevoActor.sexo" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="mb-3">
+              <label for="address">fechaDeNacimiento</label>
+              <input type="number" class="form-control" id="address" [(ngModel)]="nuevoActor.fechaDeNacimiento"  [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="mb-3">
+                <label for="address">Foto</label>
+                <input type="number" class="form-control" id="address" [(ngModel)]="nuevoActor.foto"  value="https://pbs.twimg.com/profile_images/764512520526761984/sLK-3RUD_400x400.jpg" [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="row ">
+                <div class="col-4">
+                    Pais seleccionado:
+                </div>
+                <div class="col">
+                    <div class="w-50 ">
+                        <app-detalle-pais [pais]="paisSeleccionado"></app-detalle-pais>
+                    </div>
+                </div>
+            </div>
+
+
+            <button  (click)="AgregarActor()" class="btn btn-success btn-lg btn-block mt-3" type="button">Agregar</button>
+          </form>
+
+          <!--app-actor-listado [listaActores]="listaActores"></app-actor-listado-->
+        </div>
+      </div>
+    </div>
+</body>
+
+
+
+

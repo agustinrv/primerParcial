@@ -1,0 +1,22 @@
+<div *ngIf="!pais">
+    <p>Seleccione un pais</p>
+</div>
+
+<div *ngIf="pais">
+    <h2>{{pais.name}}</h2>
+
+    <div class="card bg-dark text-white">
+        <img class="card-img-top" src="{{pais.flag}}" width="100%">
+        <div class="card-body">            
+            <p class="card-text">Capital: {{pais.capital}}</p>
+            <button (click)="DesabilitarPais()" class="btn btn-success">Desabilitar</button>
+
+        </div>
+    </div>
+</div>
+
+<!--div *ngFor="let item of pais | keyvalue">
+                 <b>{{item.key}}:</b><p>{{item.value}}</p>
+            </div-->
+
+
